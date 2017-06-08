@@ -1,0 +1,17 @@
+PODS:
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - ZWFrame (0.0.2)
+
+DEPENDENCIES:
+  - SDWebImage (~> 4.0.0)
+  - ZWFrame (~> 0.0.2)
+
+SPEC CHECKSUMS:
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  ZWFrame: ad33cb5a9d8ef67d3610db8a2881199a79d40d3f
+
+PODFILE CHECKSUM: d649d8d7e89a8ea0ac7760f5dbd82aeb9803b579
+
+COCOAPODS: 1.2.1

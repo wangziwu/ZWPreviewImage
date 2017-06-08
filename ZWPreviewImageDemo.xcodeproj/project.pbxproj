@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		545AB2A258D83DA7DCF52AFE /* Pods_ZWPreviewImageDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09555D99EBE03381EBC5775 /* Pods_ZWPreviewImageDemo.framework */; };
+		851987DC1EE9857300C9894D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987DB1EE9857300C9894D /* main.m */; };
+		851987DF1EE9857300C9894D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987DE1EE9857300C9894D /* AppDelegate.m */; };
+		851987E21EE9857300C9894D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987E11EE9857300C9894D /* ViewController.m */; };
+		851987E51EE9857300C9894D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851987E31EE9857300C9894D /* Main.storyboard */; };
+		851987E71EE9857300C9894D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851987E61EE9857300C9894D /* Assets.xcassets */; };
+		851987EA1EE9857300C9894D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851987E81EE9857300C9894D /* LaunchScreen.storyboard */; };
+		851987F41EE985C600C9894D /* ZWPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987F31EE985C600C9894D /* ZWPreviewImageView.m */; };
+		851987F71EE985F100C9894D /* ZWPreviewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987F61EE985F100C9894D /* ZWPreviewImageCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3D1FB71A8077A96F0015F8BE /* Pods-ZWPreviewImageDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWPreviewImageDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZWPreviewImageDemo/Pods-ZWPreviewImageDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4D7B667182F3314AFD35290C /* Pods-ZWPreviewImageDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWPreviewImageDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZWPreviewImageDemo/Pods-ZWPreviewImageDemo.release.xcconfig"; sourceTree = "<group>"; };
+		851987D71EE9857300C9894D /* ZWPreviewImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWPreviewImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		851987DB1EE9857300C9894D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		851987DD1EE9857300C9894D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		851987DE1EE9857300C9894D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		851987E01EE9857300C9894D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		851987E11EE9857300C9894D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		851987E41EE9857300C9894D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		851987E61EE9857300C9894D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		851987E91EE9857300C9894D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		851987EB1EE9857300C9894D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		851987F21EE985C600C9894D /* ZWPreviewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWPreviewImageView.h; sourceTree = "<group>"; };
+		851987F31EE985C600C9894D /* ZWPreviewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWPreviewImageView.m; sourceTree = "<group>"; };
+		851987F51EE985F100C9894D /* ZWPreviewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWPreviewImageCell.h; sourceTree = "<group>"; };
+		851987F61EE985F100C9894D /* ZWPreviewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWPreviewImageCell.m; sourceTree = "<group>"; };
+		E09555D99EBE03381EBC5775 /* Pods_ZWPreviewImageDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZWPreviewImageDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		851987D41EE9857300C9894D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545AB2A258D83DA7DCF52AFE /* Pods_ZWPreviewImageDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7466402BF8D43D70EE4ECBB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E09555D99EBE03381EBC5775 /* Pods_ZWPreviewImageDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77FBB1CC498E91D772C2CB71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D1FB71A8077A96F0015F8BE /* Pods-ZWPreviewImageDemo.debug.xcconfig */,
+				4D7B667182F3314AFD35290C /* Pods-ZWPreviewImageDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		851987CE1EE9857300C9894D = {
+			isa = PBXGroup;
+			children = (
+				851987F11EE9859300C9894D /* ZWPreviewImage */,
+				851987D91EE9857300C9894D /* ZWPreviewImageDemo */,
+				851987D81EE9857300C9894D /* Products */,
+				77FBB1CC498E91D772C2CB71 /* Pods */,
+				7466402BF8D43D70EE4ECBB6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		851987D81EE9857300C9894D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				851987D71EE9857300C9894D /* ZWPreviewImageDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		851987D91EE9857300C9894D /* ZWPreviewImageDemo */ = {
+			isa = PBXGroup;
+			children = (
+				851987DD1EE9857300C9894D /* AppDelegate.h */,
+				851987DE1EE9857300C9894D /* AppDelegate.m */,
+				851987E01EE9857300C9894D /* ViewController.h */,
+				851987E11EE9857300C9894D /* ViewController.m */,
+				851987E31EE9857300C9894D /* Main.storyboard */,
+				851987E61EE9857300C9894D /* Assets.xcassets */,
+				851987E81EE9857300C9894D /* LaunchScreen.storyboard */,
+				851987EB1EE9857300C9894D /* Info.plist */,
+				851987DA1EE9857300C9894D /* Supporting Files */,
+			);
+			path = ZWPreviewImageDemo;
+			sourceTree = "<group>";
+		};
+		851987DA1EE9857300C9894D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				851987DB1EE9857300C9894D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		851987F11EE9859300C9894D /* ZWPreviewImage */ = {
+			isa = PBXGroup;
+			children = (
+				851987F21EE985C600C9894D /* ZWPreviewImageView.h */,
+				851987F31EE985C600C9894D /* ZWPreviewImageView.m */,
+				851987F51EE985F100C9894D /* ZWPreviewImageCell.h */,
+				851987F61EE985F100C9894D /* ZWPreviewImageCell.m */,
+			);
+			path = ZWPreviewImage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		851987D61EE9857300C9894D /* ZWPreviewImageDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 851987EE1EE9857300C9894D /* Build configuration list for PBXNativeTarget "ZWPreviewImageDemo" */;
+			buildPhases = (
+				735DB6F4F4330E167C6DD451 /* [CP] Check Pods Manifest.lock */,
+				851987D31EE9857300C9894D /* Sources */,
+				851987D41EE9857300C9894D /* Frameworks */,
+				851987D51EE9857300C9894D /* Resources */,
+				E9B9DD284CA1C7A26EADD2EB /* [CP] Embed Pods Frameworks */,
+				179CAF4C7600F2E7D25D1500 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZWPreviewImageDemo;
+			productName = ZWPreviewImageDemo;
+			productReference = 851987D71EE9857300C9894D /* ZWPreviewImageDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		851987CF1EE9857300C9894D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = wang_ziwu;
+				TargetAttributes = {
+					851987D61EE9857300C9894D = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HW3C56DWFX;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 851987D21EE9857300C9894D /* Build configuration list for PBXProject "ZWPreviewImageDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 851987CE1EE9857300C9894D;
+			productRefGroup = 851987D81EE9857300C9894D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				851987D61EE9857300C9894D /* ZWPreviewImageDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		851987D51EE9857300C9894D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				851987EA1EE9857300C9894D /* LaunchScreen.storyboard in Resources */,
+				851987E71EE9857300C9894D /* Assets.xcassets in Resources */,
+				851987E51EE9857300C9894D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		179CAF4C7600F2E7D25D1500 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZWPreviewImageDemo/Pods-ZWPreviewImageDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		735DB6F4F4330E167C6DD451 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E9B9DD284CA1C7A26EADD2EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZWPreviewImageDemo/Pods-ZWPreviewImageDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		851987D31EE9857300C9894D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				851987F41EE985C600C9894D /* ZWPreviewImageView.m in Sources */,
+				851987F71EE985F100C9894D /* ZWPreviewImageCell.m in Sources */,
+				851987E21EE9857300C9894D /* ViewController.m in Sources */,
+				851987DF1EE9857300C9894D /* AppDelegate.m in Sources */,
+				851987DC1EE9857300C9894D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		851987E31EE9857300C9894D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				851987E41EE9857300C9894D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		851987E81EE9857300C9894D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				851987E91EE9857300C9894D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		851987EC1EE9857300C9894D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		851987ED1EE9857300C9894D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		851987EF1EE9857300C9894D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D1FB71A8077A96F0015F8BE /* Pods-ZWPreviewImageDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HW3C56DWFX;
+				INFOPLIST_FILE = ZWPreviewImageDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wang-ziwu.ZWPreviewImageDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		851987F01EE9857300C9894D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D7B667182F3314AFD35290C /* Pods-ZWPreviewImageDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HW3C56DWFX;
+				INFOPLIST_FILE = ZWPreviewImageDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wang-ziwu.ZWPreviewImageDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		851987D21EE9857300C9894D /* Build configuration list for PBXProject "ZWPreviewImageDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				851987EC1EE9857300C9894D /* Debug */,
+				851987ED1EE9857300C9894D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		851987EE1EE9857300C9894D /* Build configuration list for PBXNativeTarget "ZWPreviewImageDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				851987EF1EE9857300C9894D /* Debug */,
+				851987F01EE9857300C9894D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 851987CF1EE9857300C9894D /* Project object */;
+}
