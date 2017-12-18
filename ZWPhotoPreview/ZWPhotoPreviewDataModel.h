@@ -26,7 +26,7 @@
  */
 @property (nonatomic, copy) NSString *zw_photoDesc;
 /**
- *  图片URL数组
+ *  图片URL/UIImage数组
  *  转换Model
  */
 + (NSArray <ZWPhotoPreviewDataModel *> *)transformPhotoURLArray:(NSArray *)urlArray;

@@ -10,14 +10,20 @@
 
 @implementation ZWPhotoPreviewDataModel
 /**
- *  图片URL数组
+ *  图片URL/UIImage数组
  *  转换Model
  */
 + (NSArray <ZWPhotoPreviewDataModel *> *)transformPhotoURLArray:(NSArray *)urlArray {
     NSMutableArray *mutArray = [NSMutableArray array];
     [urlArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ZWPhotoPreviewDataModel *model = [[ZWPhotoPreviewDataModel alloc] init];
-        model.zw_photoURL = obj;
+        if ([obj isKindOfClass:[UIImage class]]) {
+            model.zw_photoImage = obj;
+        }else if ([obj isKindOfClass:[NSString class]]){
+            model.zw_photoURL = obj;
+        }else{
+            model.zw_photoURL = @"";
+        }
         [mutArray addObject:model];
     }];
     return mutArray;
