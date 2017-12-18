@@ -20,12 +20,13 @@
 }
 - (IBAction)showImage{
     NSMutableArray *mutArray = [NSMutableArray array];
+    [mutArray addObject:[UIImage imageNamed:@"avatar_team"]];
     for (NSInteger i=0; i<10; i++) {
         [mutArray addObject:@"http://api.nfboyin.com/dinggu/upload/lunbo1.png"];
     }
     ZWPhotoPreview *view = [ZWPhotoPreview zw_showPhotoPreview];
     view.photoDatas = [ZWPhotoPreviewDataModel transformPhotoURLArray:mutArray];
-    view.showIndex = 30;
+//    view.showIndex = 30;
 }
 
 - (void)didReceiveMemoryWarning {
