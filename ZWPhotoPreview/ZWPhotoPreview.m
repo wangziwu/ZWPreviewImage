@@ -225,14 +225,24 @@ UICollectionViewDataSource>
 #pragma mark - layzing
 -(void)setShowIndex:(NSInteger)showIndex{
     _showIndex = showIndex;
-    [self changeIndexPageNum:showIndex];
-    [self handleRemarkInfo:showIndex];
-    [_mCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:showIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    if (!self.photoDatas.count) {
+        return;
+    }
+    if (_showIndex>=self.photoDatas.count) {
+        _showIndex = self.photoDatas.count-1;
+    }
+    [self changeIndexPageNum:_showIndex];
+    [self handleRemarkInfo:_showIndex];
+    [_mCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:_showIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
 }
 - (void)setPhotoDatas:(NSArray<ZWPhotoPreviewDataModel *> *)photoDatas {
     _photoDatas = photoDatas;
-    [self changeIndexPageNum:0];
-    [self handleRemarkInfo:0];
+    if (photoDatas.count) {
+        [self changeIndexPageNum:0];
+        [self handleRemarkInfo:0];
+    }else{
+        [self removeFromSuperview];
+    }
 }
 - (UICollectionView *)mCollection{
     if (!_mCollection) {

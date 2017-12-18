@@ -25,7 +25,7 @@
     }
     ZWPhotoPreview *view = [ZWPhotoPreview zw_showPhotoPreview];
     view.photoDatas = [ZWPhotoPreviewDataModel transformPhotoURLArray:mutArray];
-    view.showIndex = 3;
+    view.showIndex = 30;
 }
 
 - (void)didReceiveMemoryWarning {
