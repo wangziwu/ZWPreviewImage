@@ -7,6 +7,5 @@ target 'ZWPreviewImageDemo' do
 
   # Pods for ZWPreviewImageDemo
 
-	pod 'SDWebImage',             	'~> 4.0.0'
-  	pod 'ZWFrame', 					'~> 0.0.2'
+    pod 'SDWebImage',                 '~> 4.0.0'
 end

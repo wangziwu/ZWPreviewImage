@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ZWPreviewImageView.h"
+#import "ZWPhotoPreview.h"
 @interface ViewController ()
 
 @end
@@ -19,11 +19,15 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)showImage{
-    NSArray *array = @[@"http://api.nfboyin.com/dinggu/upload/lunbo1.png",
-                       @"http://api.nfboyin.com/dinggu/upload/lunbo2.png"];
-    ZWPreviewImageView *showView = [ZWPreviewImageView showImageWithArray:array withShowIndex:1];
-    [showView showRootWindow];
+    NSMutableArray *mutArray = [NSMutableArray array];
+    for (NSInteger i=0; i<10; i++) {
+        [mutArray addObject:@"http://api.nfboyin.com/dinggu/upload/lunbo1.png"];
+    }
+    ZWPhotoPreview *view = [ZWPhotoPreview zw_showPhotoPreview];
+    view.photoDatas = [ZWPhotoPreviewDataModel transformPhotoURLArray:mutArray];
+    view.showIndex = 3;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
