@@ -23,7 +23,7 @@
 }
 - (CGFloat)dismissMaxScale {
     if (!_dismissMaxScale) {
-        _dismissMaxScale = 0.80f;
+        _dismissMaxScale = 0.70f;
     }
     return _dismissMaxScale;
 }

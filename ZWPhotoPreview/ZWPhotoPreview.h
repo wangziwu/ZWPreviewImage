@@ -15,7 +15,8 @@
  */
 @property (nonatomic, copy) NSArray<ZWPhotoPreviewDataModel *> *photoDatas;
 /**
- *  默认展示图片下标
+ *  默认展示图片数组下标
+ *  [0~n]
  */
 @property (nonatomic, assign) NSInteger showIndex;
 /**

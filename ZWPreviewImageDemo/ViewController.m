@@ -20,13 +20,20 @@
 }
 - (IBAction)showImage{
     NSMutableArray *mutArray = [NSMutableArray array];
-    [mutArray addObject:[UIImage imageNamed:@"avatar_team"]];
-    for (NSInteger i=0; i<10; i++) {
-        [mutArray addObject:@"http://api.nfboyin.com/dinggu/upload/lunbo1.png"];
+    for (NSInteger i=0; i<3; i++) {
+        ZWPhotoPreviewDataModel *model1 = [[ZWPhotoPreviewDataModel alloc] init];
+        model1.zw_photoURL = @"http://api.nfboyin.com/dinggu/upload/lunbo1.png";
+        model1.zw_photoTitle = @"春风十里不如你蠢";
+        model1.zw_photoDesc = @"春风十里不如你蠢春风十里不如你蠢春风十里不如你蠢";
+        [mutArray addObject:model1];
+        
+        ZWPhotoPreviewDataModel *model2 = [[ZWPhotoPreviewDataModel alloc] init];
+        model2.zw_photoURL = @"http://api.nfboyin.com/dinggu/upload/lunbo2.png";
+        model2.zw_photoTitle = @"机会难得不如不得";
+        model2.zw_photoDesc = @"机会难得不如不得机会难得不如不得机会难得不如不得";
+        [mutArray addObject:model2];
     }
-    ZWPhotoPreview *view = [ZWPhotoPreview zw_showPhotoPreview];
-    view.photoDatas = [ZWPhotoPreviewDataModel transformPhotoURLArray:mutArray];
-//    view.showIndex = 30;
+    [ZWPhotoPreview zw_showPhotoPreview:mutArray];
 }
 
 - (void)didReceiveMemoryWarning {

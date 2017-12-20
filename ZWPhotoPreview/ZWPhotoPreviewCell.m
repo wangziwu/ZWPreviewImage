@@ -127,9 +127,14 @@
     }
     __weak typeof(self) weakSelf = self;
     [self.indicator startAnimating];
-    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:cellModel.zw_photoURL] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:cellModel.zw_photoURL] placeholderImage:self.previewConfig.placeHolderImage completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        if (error) {
+            weakSelf.photoImageView.image = weakSelf.previewConfig.placeHolderImage;
+        }
         [weakSelf resetSubviewSize];
-        [weakSelf.indicator stopAnimating];
+        if (weakSelf.photoImageView.image) {
+            [weakSelf.indicator stopAnimating];
+        }
     }];
 }
 -(UIActivityIndicatorView *)indicator{

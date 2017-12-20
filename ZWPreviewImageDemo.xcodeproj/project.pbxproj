@@ -14,6 +14,8 @@
 		851987E51EE9857300C9894D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851987E31EE9857300C9894D /* Main.storyboard */; };
 		851987E71EE9857300C9894D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851987E61EE9857300C9894D /* Assets.xcassets */; };
 		851987EA1EE9857300C9894D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851987E81EE9857300C9894D /* LaunchScreen.storyboard */; };
+		853241701FEA5B2B0087F416 /* ZWPhotoAskSaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8532416F1FEA5B2B0087F416 /* ZWPhotoAskSaveView.m */; };
+		857898971FE94ED500CAC862 /* ZWPagePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 857898961FE94ED500CAC862 /* ZWPagePickerView.m */; };
 		85FD52541FE2703400AE40EE /* ZWPhotoPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FD52531FE2703400AE40EE /* ZWPhotoPreview.m */; };
 		85FD52571FE2706000AE40EE /* ZWPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FD52561FE2706000AE40EE /* ZWPhotoPreviewCell.m */; };
 		85FD525D1FE2715A00AE40EE /* ZWPhotoPreviewDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FD525C1FE2715A00AE40EE /* ZWPhotoPreviewDataModel.m */; };
@@ -33,6 +35,10 @@
 		851987E61EE9857300C9894D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		851987E91EE9857300C9894D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		851987EB1EE9857300C9894D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8532416E1FEA5B2B0087F416 /* ZWPhotoAskSaveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWPhotoAskSaveView.h; sourceTree = "<group>"; };
+		8532416F1FEA5B2B0087F416 /* ZWPhotoAskSaveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWPhotoAskSaveView.m; sourceTree = "<group>"; };
+		857898951FE94ED500CAC862 /* ZWPagePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWPagePickerView.h; sourceTree = "<group>"; };
+		857898961FE94ED500CAC862 /* ZWPagePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWPagePickerView.m; sourceTree = "<group>"; };
 		85FD52521FE2703400AE40EE /* ZWPhotoPreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWPhotoPreview.h; sourceTree = "<group>"; };
 		85FD52531FE2703400AE40EE /* ZWPhotoPreview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWPhotoPreview.m; sourceTree = "<group>"; };
 		85FD52551FE2706000AE40EE /* ZWPhotoPreviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWPhotoPreviewCell.h; sourceTree = "<group>"; };
@@ -127,6 +133,10 @@
 				85FD525C1FE2715A00AE40EE /* ZWPhotoPreviewDataModel.m */,
 				85FF3D9B1FE37BB900390AA5 /* ZWPhotoPreviewConfig.h */,
 				85FF3D9C1FE37BB900390AA5 /* ZWPhotoPreviewConfig.m */,
+				857898951FE94ED500CAC862 /* ZWPagePickerView.h */,
+				857898961FE94ED500CAC862 /* ZWPagePickerView.m */,
+				8532416E1FEA5B2B0087F416 /* ZWPhotoAskSaveView.h */,
+				8532416F1FEA5B2B0087F416 /* ZWPhotoAskSaveView.m */,
 			);
 			path = ZWPhotoPreview;
 			sourceTree = "<group>";
@@ -264,7 +274,9 @@
 				85FD52571FE2706000AE40EE /* ZWPhotoPreviewCell.m in Sources */,
 				85FF3D9D1FE37BB900390AA5 /* ZWPhotoPreviewConfig.m in Sources */,
 				85FD525D1FE2715A00AE40EE /* ZWPhotoPreviewDataModel.m in Sources */,
+				857898971FE94ED500CAC862 /* ZWPagePickerView.m in Sources */,
 				851987E21EE9857300C9894D /* ViewController.m in Sources */,
+				853241701FEA5B2B0087F416 /* ZWPhotoAskSaveView.m in Sources */,
 				851987DF1EE9857300C9894D /* AppDelegate.m in Sources */,
 				851987DC1EE9857300C9894D /* main.m in Sources */,
 			);

@@ -8,18 +8,29 @@
 
 #import "ZWPhotoPreview.h"
 #import "ZWPhotoPreviewCell.h"
+#import "ZWPagePickerView.h"
+#import "ZWPhotoAskSaveView.h"
+//页码 width
+#define PageShowWidth           50
+//页码、remark等通用margin
+#define PageShowMargin          10
+//文本Scroll 高度
+#define RemarkScrollHeight      120
+
 @interface ZWPhotoPreview ()
 <UICollectionViewDelegate,
 UICollectionViewDataSource>
+@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UICollectionView *mCollection;
 @property (nonatomic, strong) UIImageView *maskImageView;
-@property (nonatomic, strong) UILabel *pageLabel;
 @property (nonatomic, strong) UIButton *pageBtn;
 @property (nonatomic, strong) UIScrollView *mScroll;
 @property (nonatomic, strong) UILabel *photoTitleLab;
 @property (nonatomic, strong) UILabel *photoDescLab;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, strong) UILabel *tips;
+@property (nonatomic, strong) ZWPagePickerView *pagePicker;
+@property (nonatomic, strong) ZWPhotoAskSaveView *photoSaveView;
 @end
 @implementation ZWPhotoPreview
 @synthesize previewConfig = _previewConfig;
@@ -31,6 +42,10 @@ UICollectionViewDataSource>
     }
     return self;
 }
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.containerView.frame = self.bounds;
+}
 #pragma mark - config
 - (void)configDefaultUI {
     self.backgroundColor = [UIColor blackColor];
@@ -38,17 +53,17 @@ UICollectionViewDataSource>
     [self configPanGesture];
 }
 - (void)configCollection {
-    [self addSubview:self.mCollection];
+    [self.containerView addSubview:self.mCollection];
 }
 - (void)configPanGesture {
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(actionPan:)];
-    [self addGestureRecognizer:panGesture];
+    [self.containerView addGestureRecognizer:panGesture];
     self.panGesture = panGesture;
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                             action:@selector(actionLongPress:)];
-    [self addGestureRecognizer:longPress];
+    [self.containerView addGestureRecognizer:longPress];
     
 }
 #pragma mark - lifeCycle
@@ -111,23 +126,35 @@ UICollectionViewDataSource>
         return;
     }
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        [self showActionSheet];
+        [self actionSavePhoto];
     }
 }
-#pragma mark - function
-- (void)showActionSheet {
-    UIAlertController *alertCtr = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"保存到手机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+- (void)actionSavePhoto {
+    __weak typeof(self) weakSelf = self;
+    self.photoSaveView = [[ZWPhotoAskSaveView alloc] init];
+    [self addSubview:self.photoSaveView];
+    [self.photoSaveView showAnimation];
+    self.photoSaveView.blockSavePhoto = ^{
         //将图片保存到相册
-        UIImageWriteToSavedPhotosAlbum([self handleShowImageView:self.showIndex], self, @selector(saveImage:finishError:contextInfo:), NULL);
-    }];
-    [alertCtr addAction:cancleAction];
-    [alertCtr addAction:saveAction];
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view = self;
-    [vc presentViewController:alertCtr animated:YES completion:nil];
+        UIImageWriteToSavedPhotosAlbum([weakSelf handleShowImageView:weakSelf.showIndex],
+                                       weakSelf, @selector(saveImage:finishError:contextInfo:), NULL);
+    };
 }
+- (void)actionSelectedPage {
+    if (self.previewConfig.forbidPickerPage) {
+        return;
+    }
+    __weak typeof(self) weakSelf = self;
+    self.pagePicker = [ZWPagePickerView showPagePickerView];
+    self.pagePicker.blockPagePicker = ^(NSInteger indexPage) {
+        weakSelf.showIndex = indexPage;
+    };
+    self.pagePicker.maxPage = self.photoDatas.count;
+    self.pagePicker.indexPage = self.showIndex;
+    [self addSubview:self.pagePicker];
+    [self.pagePicker showAnimation];
+}
+#pragma mark - function
 - (void)saveImage:(UIImage *) image finishError: (NSError *) error contextInfo:(void *)contextInfo{
     NSString *msg = nil ;
     if(error != NULL){
@@ -171,19 +198,8 @@ UICollectionViewDataSource>
 - (void)changeIndexPageNum:(NSInteger)indexPage{
     NSString *currPageStr = [NSString stringWithFormat:@"%ld",(long)indexPage + 1];
     NSString *totalPageStr = [NSString stringWithFormat:@"%lu",(unsigned long)self.photoDatas.count];
-    self.pageLabel.text = [NSString stringWithFormat:@"%@/%@",currPageStr,totalPageStr];
-    [self handlePageLabelSize];
-}
-- (void)handlePageLabelSize {
-    [self.pageLabel sizeToFit];
-    CGRect frame;
-    frame.origin = CGPointZero;
-    frame.size.width = CGRectGetWidth(self.pageLabel.bounds) + 10;
-    frame.size.height = frame.size.width;
-    frame.origin.x = CGRectGetWidth(self.bounds) - frame.size.width - 10;
-    frame.origin.y = CGRectGetHeight(self.bounds) - frame.size.height - 10;
-    self.pageLabel.frame = frame;
-    self.pageLabel.layer.cornerRadius = frame.size.width/2;
+    NSString *precent = [NSString stringWithFormat:@"%@/%@",currPageStr,totalPageStr];
+    [self.pageBtn setTitle:precent forState:UIControlStateNormal];
 }
 - (void)handleRemarkInfo:(NSInteger)indexPage {
     ZWPhotoPreviewDataModel *model = self.photoDatas[indexPage];
@@ -199,6 +215,7 @@ UICollectionViewDataSource>
     [self.photoDescLab sizeToFit];
     
     self.mScroll.contentSize = CGSizeMake(1, CGRectGetMaxY(self.photoDescLab.frame));
+    [self.mScroll setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 - (void)handlePreviewConfig {
     if (self.previewConfig.forbidPanDismiss) {
@@ -261,18 +278,6 @@ UICollectionViewDataSource>
     }
     return _mCollection;
 }
-- (UILabel *)pageLabel{
-    if (!_pageLabel) {
-        _pageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _pageLabel.textAlignment = NSTextAlignmentCenter;
-        _pageLabel.font = [UIFont systemFontOfSize:15];
-        _pageLabel.textColor = [UIColor whiteColor];
-        _pageLabel.backgroundColor = [UIColor darkGrayColor];
-        _pageLabel.clipsToBounds = YES;
-        [self addSubview:_pageLabel];
-    }
-    return _pageLabel;
-}
 - (UIImageView *)maskImageView {
     if (!_maskImageView) {
         _maskImageView = [[UIImageView alloc] init];
@@ -294,9 +299,13 @@ UICollectionViewDataSource>
 - (UIScrollView *)mScroll {
     if (!_mScroll) {
         _mScroll = [[UIScrollView alloc] init];
-        _mScroll.frame = CGRectMake(20, CGRectGetHeight(self.bounds)-120, CGRectGetWidth(self.bounds)-80, 100);
+        CGRect frame = CGRectZero;
+        frame.origin.x = 2 * PageShowMargin;
+        frame.origin.y = CGRectGetHeight(self.bounds) - RemarkScrollHeight - 2 * PageShowMargin;
+        frame.size.width = CGRectGetWidth(self.bounds) - 2 *frame.origin.x - PageShowWidth;
+        frame.size.height = RemarkScrollHeight;
+        _mScroll.frame = frame;
         _mScroll.backgroundColor = [UIColor clearColor];
-        _mScroll.clipsToBounds = NO;
         [self addSubview:_mScroll];
     }
     return _mScroll;
@@ -321,7 +330,20 @@ UICollectionViewDataSource>
 }
 - (UIButton *)pageBtn {
     if (!_pageBtn) {
-        _pageBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        _pageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        CGRect frame = CGRectZero;
+        frame.origin.x = CGRectGetWidth(self.bounds) - PageShowWidth - PageShowMargin;
+        frame.origin.y = CGRectGetHeight(self.bounds) - PageShowWidth - PageShowMargin;
+        frame.size = CGSizeMake(PageShowWidth, PageShowWidth);
+        _pageBtn.frame = frame;
+        _pageBtn.backgroundColor = [UIColor darkGrayColor];
+        [_pageBtn setTitleColor:[UIColor whiteColor]
+                       forState:UIControlStateNormal];
+        _pageBtn.layer.cornerRadius = PageShowWidth * 0.5;
+        [_pageBtn addTarget:self action:@selector(actionSelectedPage)
+           forControlEvents:UIControlEventTouchUpInside];
+        [_pageBtn.titleLabel setAdjustsFontSizeToFitWidth:YES];
+        [self addSubview:_pageBtn];
     }
     return _pageBtn;
 }
@@ -339,6 +361,13 @@ UICollectionViewDataSource>
         [self addSubview:_tips];
     }
     return _tips;
+}
+- (UIView *)containerView {
+    if (!_containerView) {
+        _containerView = [[UIView alloc] init];
+        [self addSubview:_containerView];
+    }
+    return _containerView;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

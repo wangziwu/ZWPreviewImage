@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+//to do ...
 typedef NS_ENUM(NSInteger,ZWPanDismissStyle) {
     //手势向上/向下滑动消失动画
     UpdownPandismissAnimation = 0,
@@ -23,18 +24,18 @@ typedef NS_ENUM(NSInteger,ZWPanDismissStyle) {
 @interface ZWPhotoPreviewConfig : NSObject
 /**
  *  图片放大倍数
- *  默认3.0f
+ *  默认: 3.0f
  */
 @property (nonatomic, assign) CGFloat maxZoomScale;
 /**
  *  图片缩小倍数
- *  默认1.0f
+ *  默认: 1.0f
  */
 @property (nonatomic, assign) CGFloat minZoomScale;
 /**
  *  手势拖动视图
  *  视图消失临界值
- *  默认0.80f
+ *  默认: 0.70f
  */
 @property (nonatomic, assign) CGFloat dismissMaxScale;
 /**
@@ -57,4 +58,13 @@ typedef NS_ENUM(NSInteger,ZWPanDismissStyle) {
  *  默认“允许”
  */
 @property (nonatomic, assign) BOOL forbidLongPressSavePhoto;
+/**
+ *  禁止选取页码功能
+ *  默认“允许”
+ */
+@property (nonatomic, assign) BOOL forbidPickerPage;
+/**
+ *  图片加载占位图
+ */
+@property (nonatomic, strong) UIImage *placeHolderImage;
 @end
