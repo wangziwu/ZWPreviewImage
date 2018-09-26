@@ -25,22 +25,25 @@
     NSMutableArray *mutArray = [NSMutableArray array];
     for (NSInteger i=0; i<3; i++) {
         ZWPhotoPreviewDataModel *model1 = [[ZWPhotoPreviewDataModel alloc] init];
-        model1.zw_photoURL = @"http://api.nfboyin.com/dinggu/upload/lunbo1.png";
+        model1.zw_photoURL = @"https://upload-images.jianshu.io/upload_images/3237547-244ca19ca03aac09.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700";
         model1.zw_photoTitle = @"春风十里不如你蠢";
         model1.zw_photoDesc = @"春风十里不如你蠢春风十里不如你蠢春风十里不如你蠢";
         [mutArray addObject:model1];
         
-        ZWPhotoPreviewDataModel *model2 = [[ZWPhotoPreviewDataModel alloc] init];
-        model2.zw_photoURL = @"http://api.nfboyin.com/dinggu/upload/lunbo2.png";
-        model2.zw_photoTitle = @"机会难得得不到你";
-        model2.zw_photoDesc = @"机会难得得不到你机会难得得不到你\n机会难得得不到你机会难得得不到你";
-        [mutArray addObject:model2];
+        
         
         ZWPhotoPreviewDataModel *model3 = [[ZWPhotoPreviewDataModel alloc] init];
         model3.zw_photoImage = [UIImage imageNamed:@"image1"];
         [mutArray addObject:model3];
+        
+        ZWPhotoPreviewDataModel *model2 = [[ZWPhotoPreviewDataModel alloc] init];
+        model2.zw_photoURL = @"https://upload-images.jianshu.io/upload_images/3237547-244ca19ca03aac09.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700";
+        model2.zw_photoTitle = @"机会难得得不到你";
+        model2.zw_photoDesc = @"机会难得得不到你机会难得得不到你\n机会难得得不到你机会难得得不到你";
+        [mutArray addObject:model2];
     }
-    [ZWPhotoPreview zw_showPhotoPreview:mutArray];
+    ZWPhotoPreview *view = [ZWPhotoPreview zw_showPhotoPreview:mutArray];
+    view.showIndex = 3;
 }
 
 - (void)didReceiveMemoryWarning {
