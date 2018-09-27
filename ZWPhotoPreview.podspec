@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.source  = {:git => 'https://github.com/wangziwu/ZWPreviewImage.git',:tag => s.version}
   s.source_files  = 'ZWPhotoPreview/*.{h,m}'
   s.requires_arc  = true
-  s.dependency 'SDWebImage',
+  s.dependency 'SDWebImage'
 end
