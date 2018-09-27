@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		545AB2A258D83DA7DCF52AFE /* Pods_ZWPreviewImageDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09555D99EBE03381EBC5775 /* Pods_ZWPreviewImageDemo.framework */; };
 		851987DC1EE9857300C9894D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987DB1EE9857300C9894D /* main.m */; };
 		851987DF1EE9857300C9894D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987DE1EE9857300C9894D /* AppDelegate.m */; };
 		851987E21EE9857300C9894D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851987E11EE9857300C9894D /* ViewController.m */; };
@@ -20,11 +19,13 @@
 		85FD52571FE2706000AE40EE /* ZWPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FD52561FE2706000AE40EE /* ZWPhotoPreviewCell.m */; };
 		85FD525D1FE2715A00AE40EE /* ZWPhotoPreviewDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FD525C1FE2715A00AE40EE /* ZWPhotoPreviewDataModel.m */; };
 		85FF3D9D1FE37BB900390AA5 /* ZWPhotoPreviewConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FF3D9C1FE37BB900390AA5 /* ZWPhotoPreviewConfig.m */; };
+		D60D35D835FA15EADC74AA94 /* libPods-ZWPreviewImageDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58807B3FF436B4B1B96F4882 /* libPods-ZWPreviewImageDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D1FB71A8077A96F0015F8BE /* Pods-ZWPreviewImageDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWPreviewImageDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZWPreviewImageDemo/Pods-ZWPreviewImageDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4D7B667182F3314AFD35290C /* Pods-ZWPreviewImageDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWPreviewImageDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZWPreviewImageDemo/Pods-ZWPreviewImageDemo.release.xcconfig"; sourceTree = "<group>"; };
+		58807B3FF436B4B1B96F4882 /* libPods-ZWPreviewImageDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZWPreviewImageDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		851987D71EE9857300C9894D /* ZWPreviewImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWPreviewImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		851987DB1EE9857300C9894D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		851987DD1EE9857300C9894D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		85FD525C1FE2715A00AE40EE /* ZWPhotoPreviewDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWPhotoPreviewDataModel.m; sourceTree = "<group>"; };
 		85FF3D9B1FE37BB900390AA5 /* ZWPhotoPreviewConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWPhotoPreviewConfig.h; sourceTree = "<group>"; };
 		85FF3D9C1FE37BB900390AA5 /* ZWPhotoPreviewConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWPhotoPreviewConfig.m; sourceTree = "<group>"; };
-		E09555D99EBE03381EBC5775 /* Pods_ZWPreviewImageDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZWPreviewImageDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545AB2A258D83DA7DCF52AFE /* Pods_ZWPreviewImageDemo.framework in Frameworks */,
+				D60D35D835FA15EADC74AA94 /* libPods-ZWPreviewImageDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		7466402BF8D43D70EE4ECBB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E09555D99EBE03381EBC5775 /* Pods_ZWPreviewImageDemo.framework */,
+				58807B3FF436B4B1B96F4882 /* libPods-ZWPreviewImageDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -403,6 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HW3C56DWFX;
 				INFOPLIST_FILE = ZWPreviewImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wang-ziwu.ZWPreviewImageDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +417,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HW3C56DWFX;
 				INFOPLIST_FILE = ZWPreviewImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wang-ziwu.ZWPreviewImageDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
