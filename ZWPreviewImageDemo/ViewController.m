@@ -37,7 +37,7 @@
         [mutArray addObject:model3];
         
         ZWPhotoPreviewDataModel *model2 = [[ZWPhotoPreviewDataModel alloc] init];
-        model2.zw_photoURL = @"https://upload-images.jianshu.io/upload_images/3237547-244ca19ca03aac09.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700";
+        model2.zw_photoURL = @"https://upload-images.jianshu.io/upload_images/3237547-a10a31a222c65251.gif";
         model2.zw_photoTitle = @"机会难得得不到你";
         model2.zw_photoDesc = @"机会难得得不到你机会难得得不到你\n机会难得得不到你机会难得得不到你";
         [mutArray addObject:model2];
